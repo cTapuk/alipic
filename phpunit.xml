@@ -1,0 +1,9 @@
+<phpunit bootstrap="vendor/autoload.php"
+         stop-on-failure="true"
+         colors="true">
+  <testsuites>
+    <testsuite name="alipic">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
