@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // We return a json
 header('Content-Type: application/json');
 
+if(!strpos($_POST['ali_url'], 'aliexpress.com'))
+    die();
 
 $client = new Client();
 
