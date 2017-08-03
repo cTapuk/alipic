@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // We return a json
 header('Content-Type: application/json');
 
-if(!strpos($_POST['ali_url'], 'aliexpress.com'))
+if(!preg_match('/^https?:\/\/(\w+\.(\w+\.)?)?aliexpress\.com/', trim($_POST['ali_url'])))
     die();
 
 $client = new Client();
