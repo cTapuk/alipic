@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // We return a json
 header('Content-Type: application/json');
 
-if(!preg_match('/^https?:\/\/(\w+\.(\w+\.)?)?aliexpress\.com/', trim($_POST['ali_url'])))
+$url = parse_url(trim($_POST['ali_url']), PHP_URL_HOST);
+if(!preg_match('/^(\w+\.(\w+\.)?)?aliexpress\.com$/', $url))
     die();
 
 $client = new Client();
